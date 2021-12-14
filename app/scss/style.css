@@ -36,10 +36,7 @@ p {
 
 .card {
   background-color: white;
-  max-width: 35vh;
   border-radius: 1rem;
-  margin: auto;
-  width: 50%;
 }
 
 .card img {
@@ -91,5 +88,12 @@ p {
   font-weight: 900;
   color: #7280a7;
   padding-bottom: 3rem;
+}
+
+@media (min-width: 500px) {
+  .card {
+    width: 450px;
+    margin: auto;
+  }
 }
 /*# sourceMappingURL=style.css.map */
