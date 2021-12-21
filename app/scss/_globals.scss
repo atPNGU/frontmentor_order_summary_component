@@ -9,11 +9,8 @@ html {
 body {
 	font-family: 'Red Hat Display', sans-serif;
 	font-size: 16px;
-	background-image: url(/images/pattern-background-desktop.svg);
-	background-repeat: no-repeat;
-  background-size: cover;
 	background-color: $bg-blue;
-	//color:
+	text-align: center;
 }
 
 img {
@@ -21,82 +18,151 @@ img {
 }
 
 // Types
+button {
+	font-family: inherit;
+	font-size: 16px;
+	font-weight: 700;
+	border: none;
+	padding: 0.3rem;
+	border-radius: 0.5rem;
+	transition: 0.1s ease-in-out;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
 h1 {
-	font-weight: 900;
 	color: $h-blue;
+	font-weight: 900;
+	font-size: 180%;
 }
 
 h2 {
-	font-weight: 700;
 	color: $h-blue;
+	font-weight: 700;
+	font-size: 110%;
+	margin-bottom: 0;
 }
 
 p {
-	font-weight: 500;
 	color: $p-blue;
+	line-height: 1.5;
 }
 
 // Classes
-.card {
-	background-color: white;
-	border-radius: 1rem;
-	
+.bg-image {
+	background: url(/images/pattern-background-mobile.svg) no-repeat center/cover;
+	height: 25rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
 }
 
-.card img {
+.card {
+	background-color: white;
+	margin: 1rem;
+	border-radius: 1rem;
+	box-shadow: 1rem 1rem 1rem hsla(224, 66%, 78%, 0.35);
+	padding-bottom: 2rem;
+	transform: translate(0, 25%);
+}
+
+.card .top-image {
+	width: 100%;
 	border-top-left-radius: 1rem;
 	border-top-right-radius: 1rem;
 }
 
-.order-summary {
-	margin: auto;
-  	width: 50%;
-}
-
-.order-summary p {
+.card p {
 	text-align: center;
+	width: 100%;
 }
 
-.payment-plan {
-	display: flex;
-	align-items: center;
+.order-box {
 	background-color: $box-blue;
 	border-radius: 1rem;
-	padding: 0 1rem;
-	margin: 1rem;
+	margin: 2rem auto;
+	padding: 0.5rem 1rem;
+	width: 80%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
-.payment-plan a {
-	font-weight: 700;
+.plan-info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 1rem;
+}
+
+.plan-info img {
+	margin-right: 1.3rem;
+}
+
+.payment-info p {
+	margin-top: 0.5rem;
+}
+
+.button-change {
+	background-color: transparent;
 	color: $purple;
 	text-decoration: underline;
-	text-decoration-thickness: 1%;
-	text-underline-offset: 0.05rem;
+	padding-right: 1rem;
 }
 
-.proceed-to-payment {
-	text-align: center;
-	font-weight: 700;
-	color: white;
+.button-change:hover {
+	opacity: 0.75;
+	text-decoration: none;
+}
+
+.continue-process {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.button-pay {
 	background-color: $purple;
-	border-radius: 0.5rem;
-
-	margin: 2rem;
+	box-shadow: 1rem 1rem 1rem hsla(224, 66%, 78%, 0.35);
+	width: 85%;
+	color: white;
+	padding: 0.75rem;
+	margin-bottom: 1rem;
 }
 
-.cancel {
-	text-align: center;
-	font-weight: 900;
+.button-pay:hover {
+	opacity: 0.75;
+}
+
+.button-cancel {
+	background-color: transparent;
 	color: $p-blue;
-	padding-bottom: 3rem;
+	padding: 0.75rem;
+}
+
+.button-cancel:hover {
+	color: $h-blue
 }
 
 // Id's
 
 // Querrys
-@media (min-width: 500px) {
-	.card {
-		width: 450px;
-		margin: auto;
+@media (min-width: 768px) { //tablets
+	.bg-image {
+		background: url(/images/pattern-background-desktop.svg) no-repeat center/cover;
+		height: 50vh;
 	}
+}
+
+@media (min-width: 500px) {
+    .card {
+        width: 450px;
+        margin: auto;
+    }
 }
